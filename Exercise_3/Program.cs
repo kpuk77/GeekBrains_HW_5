@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 //                                              Задание 3.
 //  *Для двух строк написать метод, определяющий, является ли одна строка перестановкой другой. Регистр можно не учитывать:
@@ -103,6 +99,9 @@ namespace Exercise_3
                     Console.WriteLine($"IsSameB: Разные.\n");
 
             } while (str1 != "quit" && str2 != "quit");
+
+            Console.WriteLine("Для завершения нажмите любую клавишу.");
+            Console.ReadKey();
         }
     }
 }

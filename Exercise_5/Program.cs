@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 //                                  Задание 5.
 //  *Написать игру «Верю.Не верю». В файле хранятся вопрос и ответ, правда это или нет.
@@ -100,11 +95,11 @@ namespace Exercise_5
             GameOfAnswers game = new GameOfAnswers(filePath);
 
             for(int i = 0; i < 5; i++)
-            {
                 game.Ask();
-            }
 
-            Console.WriteLine($"Ваш счет: {game.score}");
+            Console.WriteLine($"Ваш счет: {game.score}\n");
+            Console.WriteLine("Для завершения нажмите любую клавишу.");
+            Console.ReadKey();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace Exercise_5
             Random rand = new Random();
             string userInput;
 
-            int nQuestion = rand.Next(questions.Length);
+            int nQuestion = rand.Next(0, questions.Length);
 
             Console.WriteLine(questions[nQuestion]);
             userInput = Console.ReadLine();
@@ -67,6 +68,26 @@ namespace Exercise_5
             }
             else
                 Console.WriteLine("Неверно!");
+
+            questions = RemoveByIndex(nQuestion, questions);
+            answers = RemoveByIndex(nQuestion, answers);
+        }
+
+        private string[] RemoveByIndex(int index, string[] stringArray)
+        {
+            int j = stringArray.Length - 1;
+            string[] str = new string[j];
+            int inx = 0;
+
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                if (index == i)
+                    continue;
+                str[inx] = stringArray[i];
+                inx++;
+            }
+
+            return str;
         }
     }
 
